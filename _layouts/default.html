@@ -265,11 +265,13 @@ i {
   }
 }
 /*Navigation*/
-mip-form div{ display:block; padding:0px; color:#000;font-size: 15px;}
-
-.luxbar-default {
+.luxbar-fixed {
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-transform: uppercase;
+  z-index: 1000;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 .luxbar-hamburger span, .luxbar-hamburger span::before, .luxbar-hamburger span::after {
@@ -321,7 +323,7 @@ mip-form div{ display:block; padding:0px; color:#000;font-size: 15px;}
 .luxbar-item {
   height: 58px; }
   .luxbar-item a {
-  padding: 18px 15px 18px 15px;
+  padding: 18px 24px 18px 24px;
   display: block; }
 
 .luxbar-hamburger {
@@ -337,7 +339,7 @@ mip-form div{ display:block; padding:0px; color:#000;font-size: 15px;}
   margin-top: 8px; }
 
 .luxbar-checkbox {
-  display: none !important; }
+  display: none; }
   .luxbar-checkbox:not(:checked) ~ .luxbar-menu {
   overflow: hidden;
   height: 58px; }
@@ -428,7 +430,6 @@ mip-form div{ display:block; padding:0px; color:#000;font-size: 15px;}
   background-color: #e7e7e7; }
 .luxbar-menu-white .luxbar-hamburger span,.luxbar-menu-white .luxbar-hamburger span::before,.luxbar-menu-white .luxbar-hamburger span::after {
   background-color: #000000; }
-
 /*Typography*/
 h1, h2 {
   margin-top: 0;
@@ -1009,17 +1010,11 @@ table th[class*="col-"] {
 .fa-mobile-alt:before {
   content: "\f3cd";
 }
-.fa-qq:before {
-  content: "\f1d6";
-}
 .fa-fax:before {
   content: "\f1ac";
 }
 .fa-envelope:before {
   content: "\f0e0";
-}
-.fa-weixin:before {
-  content: "\f1d7";
 }
 @font-face {
   font-family: 'Font Awesome 5 Brands';
@@ -1080,52 +1075,20 @@ table th[class*="col-"] {
                 <li class="luxbar-item {% if page.type == '一体机' %}active{% endif %}"><a href="{{ site.url }}/ytj/">一体机</a></li>
               </ul>
             </li>
-            <li class="luxbar-item dropdown {% if page.category == 'about' %}active{% endif %}"><a>About</a>
-              <ul>
-                <li class="luxbar-item {% if page.title == 'Company Profile' %}active{% endif %}"><a href="{{ site.url }}/company-profile/">Company Profile</a></li>
-                <li class="luxbar-item {% if page.title == 'Factory' %}active{% endif %}"><a href="{{ site.url }}/factory/">Factory</a></li>
-                <li class="luxbar-item {% if page.title == 'Quality Control' %}active{% endif %}"><a href="{{ site.url }}/quality-control/">Quality Control</a></li>
-                <li class="luxbar-item {% if page.title == 'Founder' %}active{% endif %}"><a href="{{ site.url }}/founder/">Founder</a></li>
-              </ul>
-            </li>
+            <li class="luxbar-item {% if page.category == 'about' %}active{% endif %}"><a href="{{ site.url }}/about/">About KRD</a></li>
             <li class="luxbar-item {% if page.category == 'contact' %}active{% endif %}"><a href="{{ site.url }}/contact/">Contact</a></li>
+            <li class="luxbar-item"><a href="{% if page.category == 'news' %}{{ site.zhurl }}{% else %}{{ site.zhurl }}{{ page.url | replace:'index.html','' }}{% endif %}" target="_blank">中文</a></li>
           </ul>
         </div>
       </div>
     </header>
-    <mip-fixed type="top">
-      <mip-form method="get" url="{{ site.url }}">
-        <header id="luxbar" class="luxbar-default">
-          <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox">
-          <div class="luxbar-menu luxbar-menu-right luxbar-menu-white">
-            <div class="container">
-              <ul class="luxbar-navigation">
-                <li class="luxbar-header">
-                  <a data-title="{{ site.title }}" href="{{ site.url }}"><mip-img src="{{ site.url }}/images/assets/krd-logo.png" width="200" height="50" class="margin-top-8" alt="凯瑞达Logo"></mip-img></a>
-                  <label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
-                </li>
-                <li class="luxbar-item {% if page.category == 'home' %}active{% endif %}"><a data-title="首页" href="{{ site.url }}">首页</a></li>
-                <li class="luxbar-item {% if page.category == 'about' %}active{% endif %}"><a data-title="企业简介" href="{{ site.url }}/about/">企业简介</a></li>
-                <li class="luxbar-item dropdown {% if page.category == 'products' %}active{% endif %}">
-                  <a href="#">产品中心</a>
-                  
-                </li>
-                <li class="luxbar-item {% if page.category == 'news' %}active{% endif %}"><a data-title="行业资讯" href="{{ site.url }}/news/">新闻中心</a></li>
-                <li class="luxbar-item {% if page.category == 'contact' %}active{% endif %}"><a data-title="联系我们" href="{{ site.url }}/contact/">联系我们</a></li>
-                <li class="luxbar-item"><a href="{% if page.category == 'news' %}{{ site.zhurl }}{% else %}{{ site.zhurl }}{{ page.url | replace:'index.html','' }}{% endif %}" target="_blank">中文</a></li>
-              </ul>
-            </div>
-          </div>
-        </header>
-      </mip-form>
-    </mip-fixed>
     <div class="margin-top-58"></div>
     {{ content }}
     <div class="footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-btm-20 hidden-xs">
-            <mip-img src="{{ site.url }}/images/assets/krd-logo-foot.png" width="200" height="50" alt="凯瑞达Logo"></mip-img>
+            <img src="{{ site.url }}/images/assets/krd-logo-foot.png" width="200" height="50" alt="凯瑞达Logo">
             <p class="text-justify margin-top-20 margin-btm-10">顺德东叶机电有限公司(凯瑞达工控)成立于2000年，专业研发、生产和销售张力控制器、张力检测器、纠偏控制器、超声波纠偏、跟线纠偏等工控自动 化产品，是工业运动控制、卷材控制的专家。公司自主研发的KRD(凯瑞达)全自动张力控制系统和伺服纠偏控制系统性能 强大、质量稳定、处于国内最尖端的水平，在包装、印刷、标签、造纸、塑料、线缆、无纺布、轮胎和橡胶等行业广泛应用。<a data-title="公司简介" href="{{ site.url }}/about/">了解更多</a></p>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-btm-20 hidden-xs">
@@ -1141,28 +1104,13 @@ table th[class*="col-"] {
               <li><a data-title="一体机" href="{{ site.url }}/ytj/" class="hover-color">一体机</a></li>
             </ul>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-btm-20 hidden-xs">
-            <p class="nav-title">新闻中心</p>
-            <div class="white-heading"></div>
-            <ul class="post-list list-unstyled">{% for post in site.categories["news"] limit:7 %}
-              <li><a data-title="{{ post.title }}" href="{{ site.url }}{{ post.url }}" class="hover-color">{{ post.title }}</a></li>{% endfor %}
-            </ul>
-          </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-btm-20">
             <p class="nav-title">联系我们</p>
             <div class="white-heading"></div>
             <p><i class="fas fa-home"></i> {{ site.address }}</p>
             <p><i class="fas fa-phone"></i> <a href="tel:{{ site.tel1 }}">{{ site.tel1 }}</a></p>
-            <p><i class="fab fa-qq"></i> <a href="http://wpa.qq.com/msgrd?v=3&uin={{ site.qq }}&site=qq&menu=yes">{{ site.qq }}</a></p>
             <p><i class="fas fa-fax"></i> {{ site.fax }}</p>
             <p><i class="fas fa-envelope"></i> {{ site.email }}</p>
-            <p><i class="fab fa-weixin"></i> <span on="tap:weixin.toggle" id="btn-open" tabindex="0">{{ site.weixin }}(点击扫码)</span></p>
-            <mip-lightbox id="weixin" layout="nodisplay" class="mip-hidden">
-              <div class="lightbox">
-                <mip-img src="/images/assets/weixin.jpg" class="margin-top-70 margin-btm-40" alt="凯瑞达微信客服"></mip-img>
-                <p class="text-center"><span on="tap:weixin.toggle" class="lightbox-close text-center">关闭</span></p>
-              </div>
-            </mip-lightbox>
           </div>
         </div>
         <div class="row">
