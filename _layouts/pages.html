@@ -3,8 +3,8 @@ layout: default
 ---
 <div class="bg-light-blue">
   <ol class="breadcrumb container">
-    <li><a href="{{ site.url }}">首页</a></li>
-    <li>/</li>{% if page.layout == 'products-article' or page.layout == 'news-article' %}
+    <li><a href="{{ site.url }}">Home</a></li>
+    <li>/</li>{% if page.layout == 'products-article' %}
     <li><a href="{{ site.url }}/{{ page.type-en }}/">{{ page.type }}</a></li>
     <li>/</li>{% endif %}
     <li class="active">{{ page.title }}</li>

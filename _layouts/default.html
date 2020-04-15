@@ -1063,7 +1063,7 @@ table th[class*="col-"] {
         <div class="container">
           <ul class="luxbar-navigation">
             <li class="luxbar-header">
-              <a href="{{ site.url }}" class="margin-top-8"><img src="{{ site.url }}/images/assets/krd-logo.png" width="200" height="50" alt="KRD Logo"></a>
+              <a href="{{ site.url }}"><img src="{{ site.url }}/images/assets/krd-logo.png" width="200" height="50" alt="KRD Logo"></a>
               <label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
             </li>
             <li class="luxbar-item dropdown {% if page.category == 'products' %}active{% endif %}"><a>Products</a>
@@ -1094,7 +1094,7 @@ table th[class*="col-"] {
             <p class="text-justify margin-top-20 margin-btm-10">顺德东叶机电有限公司(凯瑞达工控)成立于2000年，专业研发、生产和销售张力控制器、张力检测器、纠偏控制器、超声波纠偏、跟线纠偏等工控自动 化产品，是工业运动控制、卷材控制的专家。公司自主研发的KRD(凯瑞达)全自动张力控制系统和伺服纠偏控制系统性能 强大、质量稳定、处于国内最尖端的水平，在包装、印刷、标签、造纸、塑料、线缆、无纺布、轮胎和橡胶等行业广泛应用。<a data-title="公司简介" href="{{ site.url }}/about/">了解更多</a></p>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-btm-20 hidden-xs">
-            <p class="nav-title">产品中心</p>
+            <p class="nav-title">Products</p>
             <div class="white-heading"></div>
             <ul class="post-list list-unstyled">
               <li><a href="{{ site.url }}/tension-control/" data-title="张力控制器" class="hover-color">张力控制器</a></li>
@@ -1107,12 +1107,12 @@ table th[class*="col-"] {
             </ul>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-btm-20">
-            <p class="nav-title">联系我们</p>
+            <p class="nav-title">Contact Info</p>
             <div class="white-heading"></div>
             <p><i class="fas fa-home"></i> {{ site.address }}</p>
-            <p><i class="fas fa-phone"></i> <a href="tel:{{ site.tel1 }}">{{ site.tel1 }}</a></p>
+            <p><i class="fas fa-phone"></i> {{ site.tel }}</p>
             <p><i class="fas fa-fax"></i> {{ site.fax }}</p>
-            <p><i class="fas fa-envelope"></i> {{ site.email }}</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
           </div>
         </div>
         <div class="row">
