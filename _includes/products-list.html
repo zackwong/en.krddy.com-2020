@@ -3,7 +3,7 @@
     <div class="shop-item">
       <div class="shop-thumbnail">
         <a data-title="{{ post.title }}" href="{{ site.url }}{{ post.url }}" title="{{ post.title }}" class="item-link"></a>
-        <img src="{{ site.url }}/images/products/{{ post.image }}.jpg" alt="{{ post.title }}">
+        <img class="img-responsive" src="{{ site.url }}/images/products/{{ post.image }}.jpg" alt="{{ post.title }}">
       </div>
       <div class="shop-item-details {% if page.layout == 'products-article' %}bg-white{% endif %}">
         <p class="shop-item-title"><a data-title="{{ post.title }}" href="{{ site.url }}{{ post.url }}">{{ post.proname }}<br>{{ post.model }}</a></p>
