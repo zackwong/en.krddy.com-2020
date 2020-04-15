@@ -533,7 +533,12 @@ p {
 /*Image*/
 img {
   vertical-align: middle;
-  width:auto;
+}
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -550,9 +555,6 @@ img {
   display: inline-block;
   max-width: 100%;
   height: auto;
-}
-.img-circle {
-  border-radius: 50%;
 }
 /*Table*/
 table {
