@@ -760,7 +760,9 @@ table th[class*="col-"] {
 .margin-btm-70 {
   margin-bottom: 70px;
 }
-
+.pr-10 {
+  padding-right: 10px;
+}
 /*buttons*/
 .btn {
   display: inline-block;
@@ -969,18 +971,6 @@ table th[class*="col-"] {
 .footer a {
   color: #ffffff;
 }
-.post-list li a {
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 14px;
-  display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid #ffffff;
-}
-.post-list li a:hover, a:focus {
-  color: #044b91;
-  text-decoration: none;
-}
 .footer-bottom {
   border-top: 1px solid #ffffff;
   padding-top: 20px;
@@ -1017,6 +1007,9 @@ table th[class*="col-"] {
 }
 .fa-envelope:before {
   content: "\f0e0";
+}
+.fa-angle-double-right:before {
+  content: "\f101";
 }
 @font-face {
   font-family: 'Font Awesome 5 Brands';
@@ -1096,23 +1089,21 @@ table th[class*="col-"] {
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-btm-20 hidden-xs">
             <p class="nav-title">Products</p>
             <div class="white-heading"></div>
-            <ul class="post-list list-unstyled">
-              <li><a href="{{ site.url }}/tension-control/" data-title="张力控制器" class="hover-color">张力控制器</a></li>
-              <li><a href="{{ site.url }}/tension-pick-up/" data-title="张力传感器" class="hover-color">张力传感器</a></li>
-              <li><a href="{{ site.url }}/zlzxq/" data-title="张力执行器" class="hover-color">张力执行器</a></li>
-              <li><a href="{{ site.url }}/controller/" data-title="纠偏控制器" class="hover-color">纠偏控制器</a></li>
-              <li><a href="{{ site.url }}/jpcgq/" data-title="纠偏传感器" class="hover-color">纠偏传感器</a></li>
-              <li><a href="{{ site.url }}/jpzxq/" data-title="纠偏执行器" class="hover-color">纠偏执行器</a></li>
-              <li><a data-title="一体机" href="{{ site.url }}/jpytj/" class="hover-color">一体机</a></li>
-            </ul>
+            <p><i class="fas fa-angle-double-right pr-10"></i><a href="{{ site.url }}/tension-control/" data-title="张力控制器" class="hover-color">张力控制器</a></p>
+            <p><i class="fas fa-angle-double-right pr-10"></i><a href="{{ site.url }}/tension-pick-up/" data-title="张力传感器" class="hover-color">张力传感器</a></p>
+            <p><i class="fas fa-angle-double-right pr-10"></i><a href="{{ site.url }}/zlzxq/" data-title="张力执行器" class="hover-color">张力执行器</a></p>
+            <p><i class="fas fa-angle-double-right pr-10"></i><a href="{{ site.url }}/controller/" data-title="纠偏控制器" class="hover-color">纠偏控制器</a></p>
+            <p><i class="fas fa-angle-double-right pr-10"></i><a href="{{ site.url }}/jpcgq/" data-title="纠偏传感器" class="hover-color">纠偏传感器</a></p>
+            <p><i class="fas fa-angle-double-right pr-10"></i><a href="{{ site.url }}/jpzxq/" data-title="纠偏执行器" class="hover-color">纠偏执行器</a></p>
+            <p><i class="fas fa-angle-double-right pr-10"></i><a data-title="一体机" href="{{ site.url }}/jpytj/" class="hover-color">一体机</a></p>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 margin-btm-20">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 margin-btm-20">
             <p class="nav-title">Contact Info</p>
             <div class="white-heading"></div>
-            <p><i class="fas fa-home"></i> {{ site.address }}</p>
-            <p><i class="fas fa-phone"></i> {{ site.tel }}</p>
-            <p><i class="fas fa-fax"></i> {{ site.fax }}</p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+            <p><i class="fas fa-home pr-10"></i>{{ site.address }}</p>
+            <p><i class="fas fa-phone pr-10"></i>{{ site.tel }}</p>
+            <p><i class="fas fa-fax pr-10"></i>{{ site.fax }}</p>
+            <p><i class="fas fa-envelope pr-10"></i><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
           </div>
         </div>
         <div class="row">
