@@ -12,21 +12,11 @@ en.krddy.com-2020
 编辑配置文件及保存: 
 
     server {
-      listen 443 ssl http2;
       server_name en.krddy.com;
-      ssl_certificate enkrddy.pem;
-      ssl_certificate_key enkrddy.key;
       index index.html;
       root /srv/en.krddy.com-2020/_site;
       error_page 404 /Error.html;
       add_header Strict-Transport-Security "max-age=15768000" always;
-      ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-      ssl_ciphers HIGH:!aNULL:!MD5:!DH;
-    }
-    server {
-        listen 80;
-        server_name en.krddy.com;
-        return 301 https://en.krddy.com$request_uri;
     }
 
 建立链接: ``sudo ln -s /etc/nginx/sites-available/en.krddy.com /etc/nginx/sites-enabled/``
